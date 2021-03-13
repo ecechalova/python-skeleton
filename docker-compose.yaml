@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+  app:
+    build:
+      context: ./
+      target: development
+    image: app
+    environment:
+      PYTHONDONTWRITEBYTECODE: "no-write"
+    volumes:
+      - .:/usr/src/app
+    #entrypoint: ["/usr/src/app/scripts/run.sh"]
