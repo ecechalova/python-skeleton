@@ -12,9 +12,9 @@ COPY \
 RUN \
   python -m pip install --upgrade pip && \
   python -m pip install --user pipx && \
-  pipx install isort && \
-  pipx install black && \
-  pipx install bandit && \
-  pipx install safety && \
+  pipx install --system-site-packages isort && \
+  pipx install --system-site-packages black && \
+  pipx install --system-site-packages bandit && \
+  pipx install --system-site-packages safety && \
   python -m pip install pip-tools && \
   pip-sync requirements.txt requirements-dev.txt
