@@ -7,7 +7,7 @@ ENV \
   PATH=${PATH}:/root/.local/bin
 
 COPY \
-   requirements.txt requirements-dev.txt ./
+   requirements.txt requirements-dev.txt setup.py ./
 
 RUN \
   python -m pip install --upgrade pip && \
