@@ -11,9 +11,9 @@ COPY \
   requirements.txt requirements-dev.txt setup.py \
   /usr/src/app/
 
-COPY \
-  scripts src tests \
-  /usr/src/app/
+COPY scripts /usr/src/app/
+COPY src /usr/src/app/
+COPY tests /usr/src/app/
 
 RUN \
   python -m pip install --upgrade pip && \
