@@ -19,7 +19,7 @@ RUN \
   python -m pip install pip-tools && \
   pip-sync requirements.txt requirements-dev.txt
 
-COPY entrypoint.sh /usr/src/app/entrypoint.sh
+COPY .github/actions/entrypoint.sh /usr/src/app/entrypoint.sh
 COPY src /usr/src/app/src
 COPY tests /usr/src/app/tests
 
