@@ -7,7 +7,7 @@ ENV \
   PATH=${PATH}:/root/.local/bin
 
 COPY \
-   requirements.txt requirements-dev.txt ./
+   ../../requirements.txt ../../requirements-dev.txt ./
 
 RUN \
   python -m pip install --upgrade pip && \
@@ -20,7 +20,7 @@ RUN \
   pip-sync requirements.txt requirements-dev.txt
 
 COPY entrypoint.sh /usr/src/app/entrypoint.sh
-COPY ../src /usr/src/app/src
-COPY ../tests /usr/src/app/tests
+COPY ../../src /usr/src/app/src
+COPY ../../tests /usr/src/app/tests
 
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]

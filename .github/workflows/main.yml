@@ -3,14 +3,12 @@ on: [push]
 jobs:
   ci:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: CI
     steps:
-      # To use this repository's private action,
-      # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
       - name: Tests
-        uses: ./.github/actions/
+        uses: .github/actions/tests.yml
         id: tests
 
 
