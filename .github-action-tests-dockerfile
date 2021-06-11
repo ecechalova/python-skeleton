@@ -22,6 +22,6 @@ RUN \
 COPY .github/actions/entrypoint.sh /usr/src/app/entrypoint.sh
 COPY src /usr/src/app/src
 COPY tests /usr/src/app/tests
-COPY LICENSE README.md pyproject.toml /usr/src/app
+COPY LICENSE README.md pyproject.toml /usr/src/app/
 
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
