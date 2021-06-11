@@ -7,7 +7,13 @@ ENV \
   PATH=${PATH}:/root/.local/bin
 
 COPY \
-   requirements.txt requirements-dev.txt setup.py ./
+  LICENSE README.md pyproject.toml \
+  requirements.txt requirements-dev.txt setup.py \
+  /usr/src/app/
+
+COPY \
+  scripts src tests \
+  /usr/src/app/
 
 RUN \
   python -m pip install --upgrade pip && \
@@ -17,11 +23,8 @@ RUN \
   pipx install --system-site-packages bandit && \
   pipx install --system-site-packages safety && \
   python -m pip install pip-tools && \
-  pip-sync requirements.txt requirements-dev.txt
+  pip-sync requirements.txt requirements-dev.txt && \
+  pip install --editable /usr/src/app
 
-COPY .github/actions/entrypoint.sh /usr/src/app/entrypoint.sh
-COPY src /usr/src/app/src
-COPY tests /usr/src/app/tests
-COPY LICENSE README.md pyproject.toml /usr/src/app/
 
-ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+ENTRYPOINT ["/usr/src/app/scripts/tests.sh"]
