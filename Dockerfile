@@ -22,3 +22,5 @@ RUN \
   python -m pip install pip-tools && \
   pip-sync requirements.txt requirements-dev.txt && \
   pip install --editable /usr/src/app
+
+ENTRYPOINT ["/bin/bash"]

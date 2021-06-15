@@ -4,10 +4,10 @@ services:
   app:
     build:
       context: ./
+      dockerfile: dockerfile
       target: development
     image: app
     environment:
       PYTHONDONTWRITEBYTECODE: "no-write"
     volumes:
       - .:/usr/src/app
-    #entrypoint: ["/usr/src/app/scripts/run.sh"]

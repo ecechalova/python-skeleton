@@ -7,13 +7,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Create Dockerfiles
-        run: ./.github/create-ci-dockerfiles.sh
+      # - name: Create CI Dockerfile
+      #   run: ./.github/create-ci-dockerfile.sh
       - name: Lint
-        uses: ./.github/actions/lint/
+        uses: ./.github/actions/
         id: lint
+        with:
+          script: 'scripts/lint.sh'
       - name: Tests
-        uses: ./.github/actions/tests/
+        uses: ./.github/actions/
         id: tests
-
-
+        with:
+          script: 'scripts/tests.sh'
