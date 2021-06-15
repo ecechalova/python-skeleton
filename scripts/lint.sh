@@ -3,7 +3,7 @@ set -ex
 
 PROJECT_ROOT="$(dirname $(dirname $(realpath $0)))"
 
-pylint --rcfile ${PROJECT_ROOT}/scripts/pylint.ini \
+pylint --rcfile ${PROJECT_ROOT}/pyproject.toml \
        ${PROJECT_ROOT}/src/ \
        ${PROJECT_ROOT}/tests/
 

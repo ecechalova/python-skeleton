@@ -1,14 +1,46 @@
+# BLACK
+
 [tool.black]
 target-version = ['py38']
+
+
+# COVERAGE
 
 # [tool.coverage.run]
 # omit = []
 
+
+# ISORT
+
 [tool.isort]
 profile = "black"
 
-# [tool.pytest]
+
+# PYLINT
+
+[tool.pylint.basic]
+good-names= []
+
+[tool.pylint.master]
+ignore = []
+load-plugins = []
+
+[tool.pylint.messages_control]
+disable=["missing-docstring",]
+
+[tool.pylint.miscellaneous]
+notes = "NOTE,TODO,FIXME"
+
+[tool.pylint.reports]
+output-format = "colorized"
+reports = "no"
+score = "no"
+
+[tool.pylint.similarities]
+ignore-imports = "yes"
+
+
+# PYTEST
 
 [tool.pytest.ini_options]
 addopts = "--cov=skeleton --cov-report term"
-
