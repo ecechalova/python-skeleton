@@ -8,7 +8,7 @@ PROJECT_ROOT="$(dirname $(dirname $(realpath $0)))"
 
 for SCRIPT in "tests" "lint"
 do
-    DOCKERFILE="$PROJECT_ROOT/github-dockerfile-$SCRIPT"
+    DOCKERFILE="$PROJECT_ROOT/.github-dockerfile-$SCRIPT"
     cat $PROJECT_ROOT/Dockerfile > "$DOCKERFILE"
     printf "\nENTRYPOINT [\"/usr/src/app/scripts/$SCRIPT.sh\"]" >> "$DOCKERFILE"
 done
