@@ -10,10 +10,10 @@ jobs:
       - name: Create Dockerfiles
         run: ./.github/create-ci-dockerfiles.sh
       - name: Lint
-        uses: ./.github/actions/lint/
+        uses: ./.github/actions/lint.yml
         id: lint
       - name: Tests
-        uses: ./.github/actions/tests/
+        uses: ./.github/actions/tests.yml
         id: tests
 
 
