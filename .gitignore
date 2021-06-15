@@ -1,3 +1,4 @@
 skeleton.egg-info/
 src/skeleton.egg-info/
 .coverage
+github-dockerfile-*

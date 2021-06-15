@@ -8,7 +8,7 @@ Project "skeleton" provides a simple template for python based projects. It's ba
     - `./docker-compose.yaml`
     - requires `docker-compose` to be installed on the developer's machine
     - use `LD_LIBRARY_PATH=/usr/local/lib docker-compose up -d --build` to build the app image
-    - use `docker-compose run --rm app bash` to exec into a dev container
+    - use `docker-compose run --rm app` to exec into a dev container
 * `setuptools` to define the application package
     - `./setup.py` holds the project metadata
 * `pip` to install the application dependencies

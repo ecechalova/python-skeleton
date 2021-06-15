@@ -1,0 +1,19 @@
+on: [push]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    name: CI
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Lint
+        uses: ./.github/actions/
+        id: lint
+        with:
+          script: 'scripts/lint.sh'
+      - name: Tests
+        uses: ./.github/actions/
+        id: tests
+        with:
+          script: 'scripts/tests.sh'

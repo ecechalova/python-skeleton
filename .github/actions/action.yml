@@ -1,0 +1,11 @@
+name: 'InDevContainer'
+description: 'Runs scripts in the development container.'
+inputs:
+  script:
+    description: 'Script to execute.'
+    required: true
+runs:
+  using: 'docker'
+  image: '../../Dockerfile'
+  args:
+    - ${{ inputs.script }}
