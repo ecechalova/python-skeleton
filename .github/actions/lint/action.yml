@@ -1,0 +1,5 @@
+name: 'Lint'
+description: 'Runs various linters on the repository.'
+runs:
+  using: 'docker'
+  image: '../../github-dockerfile-lint'
