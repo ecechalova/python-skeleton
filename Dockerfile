@@ -14,7 +14,7 @@ COPY tests tests
 
 RUN \
   python -m pip install --upgrade pip && \
-  python -m pip install --user pipx && \
+  python -m pip install pipx && \
   pipx install --system-site-packages isort && \
   pipx install --system-site-packages black && \
   pipx install --system-site-packages bandit && \
