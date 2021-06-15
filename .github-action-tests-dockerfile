@@ -1,5 +1,7 @@
 # syntax = edrevo/dockerfile-plus
 
+FROM python:3.9-slim
+
 INCLUDE+ Dockerfile
 
 ENTRYPOINT ["/usr/src/app/scripts/tests.sh"]
