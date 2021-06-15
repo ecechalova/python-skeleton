@@ -2,4 +2,4 @@ name: 'Tests'
 description: 'Runs the test suite.'
 runs:
   using: 'docker'
-  image: '../../../github-dockerfile-tests'
+  image: './../../../github-dockerfile-tests'
